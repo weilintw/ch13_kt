@@ -1,9 +1,9 @@
-/*c13-4
+/*c13-5
 */
 
 fun main() {
 //呼叫 Player 類別的主建構函數，產生一個類別實體
-    var player = Player("wl",89,true,false)
+    var player = Player("wl")
     player.castFireBall(5)
     player.auraColor()
     printPlayerStatus(player)
