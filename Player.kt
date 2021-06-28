@@ -1,4 +1,4 @@
-/*c13-8
+/*c13-9
  */
 class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean, private val isImmortal: Boolean){
         var name = _name
@@ -6,6 +6,8 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
         private set(value) {
             field = value.trim()
         }
+    val hometown: String
+
     init {
         require(healthPoints > 0,{"健康點數需大於0"})
         require(name.isNotBlank(),{"玩家一定要有名字"})
