@@ -1,4 +1,4 @@
-/*c13-3
+/*c13-4
  */
 class Player(_name: String, var healthPoints: Int, val isBlessed: Boolean, private val isImmortal: Boolean){
         var name = _name
@@ -6,6 +6,7 @@ class Player(_name: String, var healthPoints: Int, val isBlessed: Boolean, priva
         private set(value) {
             field = value.trim()
         }
+    constructor(name: String):this(name,healthPoints = 100,isBlessed = true,isImmortal = false)
 
     fun auraColor() =
         if (isBlessed && healthPoints > 50 || isImmortal) "綠色" else "無光環"
