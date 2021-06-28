@@ -1,9 +1,9 @@
 import java.io.File
-/*c13-10
+/*c13-11
  */
 class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean, private val isImmortal: Boolean){
         var name = _name
-        get() = field.capitalize()
+        get() = "${field.capitalize()} of $hometown"
         private set(value) {
             field = value.trim()
         }
