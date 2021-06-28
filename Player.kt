@@ -1,4 +1,5 @@
-/*c13-9
+import java.io.File
+/*c13-10
  */
 class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean, private val isImmortal: Boolean){
         var name = _name
@@ -6,7 +7,7 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
         private set(value) {
             field = value.trim()
         }
-    val hometown: String
+    val hometown = selectHometown()
 
     init {
         require(healthPoints > 0,{"健康點數需大於0"})
@@ -39,4 +40,6 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
         println("FireBall杯數：$numFireballs")
         return numFireballs
     }
+    private fun selectHometown() = File("data/towns.txt")
+        .readText().split("\r\n").shuffled().first()
 }
