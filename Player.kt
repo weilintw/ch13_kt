@@ -1,5 +1,4 @@
-/*c13-1
-取用c12-22
+/*c13-2
  */
 class Player(_name: String, _healthPoints: Int, _isBlessed: Boolean, _isImmortal: Boolean){
         var name = _name
