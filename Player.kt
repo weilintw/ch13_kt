@@ -1,5 +1,5 @@
 import java.io.File
-/*c13-11
+/*c13-12
  */
 class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean, private val isImmortal: Boolean){
         var name = _name
@@ -7,7 +7,7 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
         private set(value) {
             field = value.trim()
         }
-    val hometown = selectHometown()
+    val hometown by lazy {selectHometown()}
 
     init {
         require(healthPoints > 0,{"健康點數需大於0"})
